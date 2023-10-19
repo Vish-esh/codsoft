@@ -32,6 +32,6 @@ while (ch=='y'):
 
     else:
         print("Invalid input")
-    ch=input("Do you want to play again press Y/N")
+    ch=input("Do you wish to continue Y/N")
 
 
