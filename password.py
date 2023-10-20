@@ -12,11 +12,11 @@ while (ch=='y'):
     pass_list = []  # empty list to insert password
     def create_password(length, complexity):
 
-        if complexity == 'low':
+        if (complexity == 'low'):
             for i in range(0,length):
                 random_pass= random.choice(Alphabets)
                 pass_list.append(random_pass)
-        elif complexity == 'medium':
+        elif (complexity == 'medium'):
             for i in range(0,length):
                 random_pass= random.choice(Alphabets + Numbers)
                 pass_list.append(random_pass)
@@ -42,6 +42,8 @@ while (ch=='y'):
         else:
             create_password(length, complexity)
     ch=input("To create password again press Y,for exit press N ")
+
+
 
 
 
