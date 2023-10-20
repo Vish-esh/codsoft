@@ -15,7 +15,7 @@ while (ch=='y'):
     print("For subtarction press 2")
     print("For multiplication press 3 ")
     print("For division press 4 ")
-    x=int(input("Enter your choice"))
+    x=int(input("Enter your choice \t"))
 
 
     if(x==1):
@@ -32,6 +32,6 @@ while (ch=='y'):
 
     else:
         print("Invalid input")
-    ch=input("Do you wish to continue Y/N")
+    ch=input("Do you wish to continue Y/N \t")
 
 
