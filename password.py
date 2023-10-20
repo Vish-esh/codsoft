@@ -6,41 +6,45 @@ Alphabets='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 Numbers='0123456789'
 special_charachters='!@#$%^&'
     
-pass_list=[]
+
+ch='y'
+while (ch=='y'):
+    pass_list = []  # empty list to insert password
+    def create_password(length, complexity):
+
+        if complexity == 'low':
+            for i in range(0,length):
+                random_pass= random.choice(Alphabets)
+                pass_list.append(random_pass)
+        elif complexity == 'medium':
+            for i in range(0,length):
+                random_pass= random.choice(Alphabets + Numbers)
+                pass_list.append(random_pass)
+
+        else:
+            for i in range(0,length):
+                random_pass= random.choice(Alphabets + Numbers + special_charachters)
+                pass_list.append(random_pass)
+        password=''.join(pass_list)
+
+        print("The obtained Password is : " + password)
 
 
-def generate_password(length, complexity):
-    
-    if complexity == 'low':
-        for i in range(0,length):
-            random_pass= random.choice(Alphabets)
-            pass_list.append(random_pass)
-    elif complexity == 'medium':
-        for i in range(0,length):
-            random_pass= random.choice(Alphabets + Numbers)
-            pass_list.append(random_pass)
-        
+
+    length=int(input("Enter the length of password "))
+    if length <= 0:
+            print("Invalid password length.")
     else:
-        for i in range(0,length):
-            random_pass= random.choice(Alphabets + Numbers + special_charachters)
-            pass_list.append(random_pass)
-    password=''.join(pass_list)
 
-    print("Generated Password: " + password)
+        complexity = input("Choose the password complexity (low/medium/high): ").lower()
+        if complexity not in ['low', 'medium', 'high']:
+            print("Invalid complexity level.")
+        else:
+            create_password(length, complexity)
+    ch=input("To create password again press Y,for exit press N ")
 
 
 
-length=int(input("Enter the length of password "))
-if length <= 0:
-        print("Invalid password length.")
-else:           
-    
-    complexity = input("Choose password complexity (low/medium/high): ").lower()
-    if complexity not in ['low', 'medium', 'high']:
-        print("Invalid complexity level.")
-    else:
-        generate_password(length, complexity)
-        
 
 
 
